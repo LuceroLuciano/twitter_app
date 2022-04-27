@@ -7,6 +7,9 @@ class User {
         this.dataCreated = new Date()
         this.lastUpdate = new Date()
     }
+    get getUsername(){
+        return this.username
+    }
 }
 
 // Exportando la clase 
