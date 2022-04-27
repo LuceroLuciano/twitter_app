@@ -10,6 +10,18 @@ class User {
     get getUsername(){
         return this.username
     }
+
+    get getBio(){
+        return this.bio
+    }
+
+    get getDateCreated(){
+        return this.dataCreated
+    }
+
+    get getLastUpdate(){
+        return this.lastUpdate
+    }
 }
 
 // Exportando la clase 
