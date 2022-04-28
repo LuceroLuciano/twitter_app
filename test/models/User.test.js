@@ -12,6 +12,10 @@ Requerimiento 2:
     `getDateCreated`, `getLastUpdated`. Solución: Agrega los getters 
     regresando la propiedad indicada, no olvides usar `this`.
 
+
+Requerimiento 4: 
+    Cada objeto necesita los siguientes setters: `setUsername` y `setBio`, para actualizar dichas propiedades.
+    Solución: Agrega los setters usando la palabra `set` y modificando el atributo indicado.
 */
 
 const User = require('./../../app/models/User')
@@ -28,7 +32,7 @@ describe("Unit Test for User class", () => {
         expect(user.bio).toBe("bio")
         expect(user.dataCreated).not.toBeUndefined()
         expect(user.lastUpdate).not.toBeUndefined()
-    })   
+    });   
 
     test("Req 3: Add a getters", () => {
         const user = new User(1, "Luz", "Lucero","bio")
@@ -36,5 +40,15 @@ describe("Unit Test for User class", () => {
         expect(user.getBio).toBe("bio")
         expect(user.getDateCreated).not.toBeUndefined()
         expect(user.getLastUpdate).not.toBeUndefined()
-    })
+    });
+
+    test("Req 4: Add setters", () => {
+        const user = new User(1, "Luz", "Lucero", "bio")
+        
+        user.setUsername = "Lucerito"
+        expect(user.username).toBe("Lucerito")
+
+        user.setBio = "Biography"        
+        expect(user.bio).toBe("Biography")
+    });
 })
